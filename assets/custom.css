@@ -1,0 +1,181 @@
+
+
+
+.table-responsive{
+  display:flex;
+  overflow:auto;
+}
+.table-responsive .table{
+  width:100%;
+}
+.size-charts .table tr td:not(:first-child),
+.size-charts .table tr th:not(:first-child){
+  white-space:nowrap;
+}
+
+:root {
+  --offset: 20vw;
+  --move-initial: calc(-25% + var(--offset));
+  --move-final: calc(-50% + var(--offset));
+}
+
+.announcement-bar__middle{
+  width: 100%;
+}
+
+.announcement-bar__announcements {
+  transition: all 2.6s;
+  overflow: hidden;
+}
+
+.announcement-bar__announcements.running .announcement {
+  animation-play-state: running;
+}
+.announcement-bar__announcements:hover .announcement {
+  animation-play-state: running;
+}
+
+.announcement-bar__announcements p {
+  padding: 0 2vw;
+  white-space: nowrap;
+}
+
+.announcement {
+  width: fit-content;
+  display: flex;
+  position: relative;
+  transform: translate3d(var(--move-initial), 0, 0);
+  animation: announcement-bar__announcements 20s linear infinite !important;
+  animation-play-state: paused;
+}
+
+.announcement__text{
+  width: fit-content;
+  display: flex;
+}
+
+@keyframes announcement-bar__announcements {
+  0% {
+    transform: translateX(var(--move-initial));
+  }
+  100% {
+    transform: translateX(var(--move-final));
+  }
+}
+
+/* Tiendas LG */
+
+.template-suffix-tiendas-lg .section-rich-text .card-scheme--none .container{
+  padding: 0px;
+}
+
+.template-suffix-tiendas-lg .flexible-layout--variable-columns{
+  justify-content: flex-start !important;
+}
+
+.template-suffix-tiendas-lg .card-content-padding .text-column__text p:nth-child(1){
+  text-decoration:underline;
+}
+
+.card.card-scheme.card-scheme--none.card-content-padding-x.fully-padded-row--medium.cc-animate-init.-in.cc-animate-complete {
+    padding-bottom: 0px;
+}
+
+.template-suffix-tiendas-lg .card-scheme--none h2.majortitle.h1-style{
+      text-decoration: underline;
+}
+
+
+@media (max-width: 767.98px){
+
+  .template-suffix-tiendas-lg .flexible-layout--variable-columns{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .template-suffix-tiendas-lg .flexible-layout--variable-columns .column{
+    width: 50% !important;
+    max-width: 100% !important;
+  }
+
+  .template-suffix-tiendas-lg .section-rich-text .card-scheme--none {
+    padding-bottom: 0px !important;
+  }
+}
+
+.video-container--background .video-container__video{
+  overflow:scroll !important; 
+  -webkit-overflow-scrolling:touch !important;
+}
+
+.navigation--desktop ul li:nth-child(4) .Sneakers{
+  background-color: rgba(0,0,0,.05) !important;
+}
+
+.navigation--desktop ul li:nth-child(5) .Special, .navigation--desktop ul li:nth-child(5) #NavigationTier2-5 a{
+  color: #CE1F2B !important;
+}
+
+/* Label Black Friday */
+.product-label--blackfriday span{
+      background-color: #000;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Favoritos */
+
+.product-list .wishlist-engine {
+    position: absolute;
+    bottom: 10px;
+    right: 55px;
+    width: 36px;
+    height: 36px;
+}
+
+.product-list .wishlist-engine-button, .product-list .wishlist-engine-button:hover, .product-list .wishlist-engine-button:focus{
+    padding: 0px !important;
+    display: flex !important;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 3px;
+}
+
+.wishlist-engine-button svg{
+    height: 17px;
+    width: 17px;
+}
+
+.wishlist-engine-button svg path{
+  stroke-width: 1px;
+}
+
+.logo-area__right .h-wishlist-icon svg{
+    width: 22px;
+    height: 22px;
+}
+
+a.header__icon.h-wishlist-icon.wishlist-page-widget {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 44px;
+    min-width: 44px;
+}
+
+.product-label--meta > span{
+  background: #df5641;
+
+
+/* Iconos header */
+
+.logo-area .cart-link span svg {
+    width: 29px !important;
+    height: 29px !important;
+}
+

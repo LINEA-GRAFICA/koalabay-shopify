@@ -1,0 +1,73 @@
+<div class="container fully-spaced-row--large">
+  <div id="template" class="small-form" data-cc-animate>
+    <div id="customer">
+      <!-- Create Customer -->
+      <div id="create-customer">
+        <div class="template_header">
+          <h1 class="title">{{ 'customer.register.title' | t }}</h1>
+        </div>
+
+        {% form 'create_customer' %}
+          {{ form.errors | default_errors }}
+
+          <div class="input-row">
+            <label for="first_name" class="login">{{ 'customer.register.first_name' | t }}</label>
+            <input type="text" value="" name="customer[first_name]" id="first_name" class="large" size="30" />
+          </div>
+
+          <div class="input-row">
+            <label for="last_name" class="login">{{ 'customer.register.last_name' | t }}</label>
+            <input type="text" value="" name="customer[last_name]" id="last_name" class="large" size="30" />
+          </div>
+
+          <div class="input-row">
+            <label for="email" class="login">{{ 'customer.register.email' | t }}</label>
+            <input type="email" value="" name="customer[email]" id="email" class="large" size="30" />
+          </div>
+
+          <div class="input-row">
+            <label for="password" class="login">{{ 'customer.register.password' | t }}</label>
+            <input type="password" value="" name="customer[password]" id="password" class="large password" size="30" />
+          </div>
+         {% if settings.checkbox_1 and settings.text_for_checckbox_1 != blank %}
+            <div class="terms rte">
+             
+              <input type="checkbox" id="term_and_conditions" required />
+               <span class="check_tooltip js-tooltip" style="display: none;">{{ settings.agree_checkbox_tooltip }}</span>
+             
+              {% assign terms_url = settings.text_for_checckbox_1 %}
+              {% capture terms_label_html %}<label for="term_and_conditions">{{ terms_url }}</label>{% endcapture %}
+              {{ terms_label_html }}
+            </div>
+          {% endif %}
+        {% if settings.checkbox_2 and settings.text_for_checckbox_2 != blank %}
+          <div class="terms rte">
+            
+              <input type="checkbox" id="term_and_conditions_2" />
+              <span class="check_tooltip_2" style="display: none;">{{ settings.agree_checkbox_tooltip }}</span>
+            
+            {% assign terms_url = settings.text_for_checckbox_2 %}
+            {% capture terms_label_html %}<label for="term_and_conditions_2">{{ terms_url }}</label>{% endcapture %}
+            {{ terms_label_html }}
+          </div>
+        {% endif %}
+
+          <div class="action_bottom">
+            <button class="btn" type="submit">{{ 'customer.register.submit' | t }}</button>
+            <span class="note">
+              <a href="{{ routes.account_login_url }}" class="feature-link">{{ 'customer.register.log_in' | t }}</a>
+              {{ 'customer.general.or' | t }}
+              <a href="{{ routes.root_url }}" class="feature-link">{{ 'customer.register.cancel' | t }}</a>
+            </span>
+          </div>
+        {% endform %}
+      </div><!-- /#create-customer -->
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Customer register"
+  }
+{% endschema %}
